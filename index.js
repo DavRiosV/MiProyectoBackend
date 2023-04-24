@@ -37,6 +37,16 @@ class ProductManager {
             return null;
         }
     }
+    
+    updateProduct(id, updatedProduct) {
+        const index = this.products.findIndex((product) => product.id === id);
+        if (index !== -1) {
+            this.products[index] = { id, ...updatedProduct };
+            this.saveProducts();
+        } else {
+            console.error("Product not found");
+        }
+    }
 }
 
 let producto = new ProductManager();
