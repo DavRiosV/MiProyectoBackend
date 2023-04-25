@@ -2,7 +2,6 @@ class ProductManager {
     constructor(path) {
         this.path = path;
         this.products = [];
-        this.loadProducts();
     }
     
     addProduct({title, description, price, thumbnail, stock}) {
@@ -38,11 +37,19 @@ class ProductManager {
         }
     }
     
-    updateProduct(id, updatedProduct) {
+    updateProduct(updatedProduct) {
+        const index = this.products.findIndex((product) => product.id === updatedProduct.id);
+        if (index !== -1) {
+            this.products[index] = updatedProduct;
+        } else {
+            console.error("Product not found");
+        }
+    }
+    deleteProduct(id) {
         const index = this.products.findIndex((product) => product.id === id);
         if (index !== -1) {
-            this.products[index] = { id, ...updatedProduct };
-            this.saveProducts();
+            console.log("holi entre")
+            this.products.splice(index, 1);
         } else {
             console.error("Product not found");
         }
@@ -65,4 +72,8 @@ producto.addProduct({title:'Peluche Wartortle', description:'Peluche de 30 cm de
 producto.addProduct({title:'Peluche Blastoise', description:'Peluche de 30 cm de alto', price: 15000, thumbnail:'https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/blastoise.jpg?alt=media&token=6feead39-6c8d-4d3e-94fd-5291fb5bc0a1', stock:100})
 console.log(producto.getProducts())
 console.log(producto.addProduct({title:'Peluche Pikachu', description:'Peluche de 30 cm de alto', price: 15000, thumbnail:'https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/pikachu.jpg?alt=media&token=c0be09a8-e126-4943-9b6f-f68c52fd5d8c', stock:100}))
-console.log(producto.getProductById(1))
+console.log(producto.getProductById(5))
+producto.updateProduct({id:5, title:'Peluche Alfredo', description:'Peluche de 30 cm de alto', price: 15000, thumbnail:'https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/charmeleon.jpg?alt=media&token=ee73dc95-dfa9-4152-926d-559461a32174', stock:100})
+console.log(producto.getProductById(5))
+producto.deleteProduct(5)
+console.log(producto.getProducts())
