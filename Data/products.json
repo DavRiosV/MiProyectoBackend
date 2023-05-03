@@ -64,20 +64,12 @@
     "id": 8
   },
   {
-    "title": "Peluche Venasaur",
+    "title": "Peluche mega Venasaur XL",
     "description": "Peluche de 30 cm de alto",
     "price": 15000,
-    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/venasaur.jpeg?alt=media&token=90b78914-2919-4e3a-aee0-5f3fa828fe17",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/charmeleon.jpg?alt=media&token=ee73dc95-dfa9-4152-926d-559461a32174",
     "stock": 100,
     "id": 9
-  },
-  {
-    "title": "Peluche Squirtle",
-    "description": "Peluche de 30 cm de alto",
-    "price": 15000,
-    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/squirtle.jpeg?alt=media&token=aacbc186-038a-45cb-839e-6aee83f781dc",
-    "stock": 100,
-    "id": 10
   },
   {
     "title": "Peluche Wartortle",
