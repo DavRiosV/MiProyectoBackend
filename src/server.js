@@ -1,5 +1,6 @@
 import express from 'express'
-import producto from './index.js'
+import producto from './managers/index.js'
+import manager from './managers/cart.js'
 
 let server = express()
 
@@ -55,3 +56,41 @@ let products_function = (req,res) => {
 }
 }
 server.get(products_route,products_function) 
+// sector del carrito
+let cart_route = '/api/carts';
+let cart_function = (req,res) =>{
+    let limit = req.query.limit ?? 12 
+    let carts = manager.getCarts().slice(0,limit)
+    if (carts.length>0){
+        return res.send({
+            success: true,
+            carts
+    })
+    } else {
+        return res.send({
+            success: false,
+            carts: 'Products carts not found'
+    }) 
+    }
+}
+server.get(cart_route,cart_function)
+
+let cid_route = '/api/carts/:cid';
+let cid_function = (req,res) => {
+    let parametros = req.params
+    let id = Number(parametros.cid)
+    let one = manager.getCartById(id)
+    console.log(one)
+    if (one){
+        return res.send({
+            success: true,
+            response: one
+    })
+    } else {
+        return res.send({
+            success: false,
+            response: 'Cart id not found'
+    })
+}
+}
+server.get(cid_route,cid_function)

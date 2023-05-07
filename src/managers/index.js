@@ -45,7 +45,7 @@ async addProduct({title, description, price, thumbnail, stock}) {
                 return this.products;
             } else {
                 console.error("Products Not found");
-                return 'products ok';
+                return 'Products Not found';
             }
         } catch(error) {
             return 'getProducts: error'
@@ -105,7 +105,7 @@ async addProduct({title, description, price, thumbnail, stock}) {
     }
 }
 
-let producto = new ProductManager('./Data/products.json');
+let producto = new ProductManager('./src/data/products.json');
 async function manager() {
     await producto.addProduct({title:'Peluche Pikachu', description:'Peluche de 30 cm de alto', price: 15000, thumbnail:'https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/pikachu.jpg?alt=media&token=c0be09a8-e126-4943-9b6f-f68c52fd5d8c', stock:100})
     await producto.addProduct({title:'Pikachu durmiendo', description:'Peluche de 30 cm de alto', price: 20000, thumbnail:'https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/pikachu-durmiendo.jpeg?alt=media&token=0ccc3ea1-8a1f-4d2e-a92b-5457d1cfbe1f', stock:100})
