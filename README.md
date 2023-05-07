@@ -40,5 +40,3 @@ Si después del endpoint agregamos el ID del producto *PID* nos postrara unicame
 - http://localhost:8050/api/products/6
 
 ![PID](https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/pid.PNG?alt=media&token=e4135459-7064-496d-9834-aed0ac114440)
-
-## Manejo de 
