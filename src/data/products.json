@@ -8,7 +8,7 @@
     "id": 1
   },
   {
-    "title": "Pikachu durmiendo",
+    "title": "pikachuuu mimido 3",
     "description": "Peluche de 30 cm de alto",
     "price": 20000,
     "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/pikachu-durmiendo.jpeg?alt=media&token=0ccc3ea1-8a1f-4d2e-a92b-5457d1cfbe1f",
@@ -86,5 +86,37 @@
     "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/blastoise.jpg?alt=media&token=6feead39-6c8d-4d3e-94fd-5291fb5bc0a1",
     "stock": 100,
     "id": 12
+  },
+  {
+    "title": "Pikachu durmiendo",
+    "description": "Peluche de 30 cm de alto",
+    "price": 20000,
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/pikachu-durmiendo.jpeg?alt=media&token=0ccc3ea1-8a1f-4d2e-a92b-5457d1cfbe1f",
+    "stock": 100,
+    "id": 13
+  },
+  {
+    "title": "Pika mimido",
+    "description": "Peluche de 30 cm de alto",
+    "price": 20000,
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/pikachu-durmiendo.jpeg?alt=media&token=0ccc3ea1-8a1f-4d2e-a92b-5457d1cfbe1f",
+    "stock": 100,
+    "id": 14
+  },
+  {
+    "title": "Pika mimido",
+    "description": "Peluche de 30 cm de alto",
+    "price": 20000,
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/pikachu-durmiendo.jpeg?alt=media&token=0ccc3ea1-8a1f-4d2e-a92b-5457d1cfbe1f",
+    "stock": 100,
+    "id": 15
+  },
+  {
+    "title": "Peluche Squirtle",
+    "description": "Peluche de 30 cm de alto",
+    "price": 20000,
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/squirtle.jpeg?alt=media&token=aacbc186-038a-45cb-839e-6aee83f781dc",
+    "stock": 100,
+    "id": 16
   }
 ]

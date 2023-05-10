@@ -40,3 +40,16 @@ Si después del endpoint agregamos el ID del producto *PID* nos postrara unicame
 - http://localhost:8050/api/products/6
 
 ![PID](https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/pid.PNG?alt=media&token=e4135459-7064-496d-9834-aed0ac114440)
+
+# Configurar las rutas en Postman
+Debemos crear una nueva colección a las cuales nombraremos (carts, products y users).
+
+Luego de crear las colecciones usaremos el apartado de opciones ilustada con tres puntos. Precionaremos add request y createmos las peticiones (GET/, GET/:ID, POST/, PUT/:ID y DEL/:ID)
+
+Ingresaremos la URL de la ruta que deseamos probar en la barra de direcciones de Postman.
+
+Por ejemplo, si deseas probar la ruta de productos, ingresa la siguiente URL en el apartado de GET:
+
+```sh
+http://localhost:8080/api/products
+```
