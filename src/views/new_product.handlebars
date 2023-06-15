@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../public/styles.css">
+	<title>New product</title>
+</head>
+<body>
+	<nav class="navbar fixed-top navbar-expand-md bg-danger navbar-dark px-5">
+    <div class="container-fluid">
+        <a class="navbar-brand col" href="/">R&A Shop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="col-auto">
+        <div class="navbar-nav flex-column flex-md-row justify-content-around">
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" aria-current="page" href="/products">Products</a>
+            <a class="nav-link active" href="/products/new_product">New Product</a>
+            <a class="nav-link" href="/chat/">Chat!</a>
+            <a class="nav-link position-relative" href="/cart">Cart<span
+        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning
+		">{{products_quantity}} </span></a>
+        </div>
+    </div>
+    </div>
+    </div>
+</nav>  	
+	<section class="pt-5">
+	<div class="row justify-content-center px-3">
+		<div class="mt-2 p-2 pb-4 col-lg-6 col-md-6 col-sm-9">
+			<div class="text-center add-product-form p-2 px-4 rounded-3">
+				<h4>Add New Product</h4>
+				<h6>Please complete the required information</h6>
+<form id="product-form" class=" text-start">
+	<div class="mb-3">
+		<label for="product-title" class="form-label">Title</label>
+		<input type="text" class="form-control" id="product-title" name="title"
+			placeholder="Product title" required />
+	</div>
+	<div class="mb-3">
+		<label for="product-description" class="form-label">Description</label>
+		<textarea class="form-control" id="product-description" name="description" rows="3"
+			required></textarea>
+	</div>
+	<div class="mb-3">
+		<label for="product-price" class="form-label">Price</label>
+		<input type="number" class="form-control w-25" maxlength="4" id="product-price" name="price"
+			required />
+	</div>
+	<div class="mb-3">
+		<label for="product-thumbnail" class="form-label">Enter image link</label>
+		<input type="text" class="form-control" id="product-thumbnail" name="thumbnail"
+		placeholder="Insert a valid photo url" required />
+	</div>
+	<div class="mb-3">
+		<label for="product-stock" class="form-label">Stock</label>
+		<input type="number" class="form-control w-25" maxlength="4" id="product-stock" name="stock"
+		required />
+	</div>
+	<div class="d-flex justify-content-between pt-3">
+		<a href="/Home" class="btn btn-secondary">Cancel</a>
+		<input type="submit" class="btn btn-success" value="Add Product!" />
+	</div>
+</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>
+
+

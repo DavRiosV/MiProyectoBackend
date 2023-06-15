@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <title>Document</title>
+</head>
+<body>
+    <section class="pt-5">
+	<div class="container mt-2 pt-2">
+		<div class="row-cart">
+			{{#each products_data}}
+				<div class="cart-div col-md-4 col-sm-6 mb-3 mb-sm-3">
+					<div class="card-cart">
+						<img src={{this.thumbnail}} class="card-img-top" alt={{this.title}} />
+						<div class="card-body">
+							<h5 class="card-title limited-title">{{this.title}}</h5>
+							<p class="card-text limited-paragraph">{{this.description}}</p>
+							<p
+								class="card-title price-tag {{this.price}} {{pid}}"
+								id="price-value-{{pid}}"
+							>Price:
+								{{this.price}}</p>
+							<p class="card-title">Quantity:
+								<input
+									type="number"
+									class="form-control d-inline-block w-50 input-tag input-value-{{this.cid}}
+										{{this.cid}}
+										{{pid}}"
+									maxlength="4"
+									placeholder={{this.quantity}}
+									value={{this.quantity}}
+									min="0"
+									max={{sum this.quantity this.stock}}
+									aria-label="item quantity"
+									aria-describedby="addon-wrapping"
+									id="edit-cart-quantity-{{this.pid}}"
+									data-id="{{this.pid}}"
+								/>
+							</p>
+							<h5
+								class="card-title card-tag card-multiplication-{{pid}}"
+								id="card-multiplication-{{pid}}"
+							>Total: ${{multiplication this.price this.quantity}}</h5>
+							<div class="d-flex justify-content-between pt-3">
+								<button
+									type="button"
+									class="btn btn-danger cart-{{this.pid}} delete-product"
+									data-pid="{{this.pid}}"
+									data-cid="{{this.cid}}"
+								>Delete</button>
+								<button
+									type="button"
+									class="btn btn-warning edit-quantity text-white {{this.pid}} {{this.cid}}"
+								>Add cart</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+	</div>
+</section>
+</body>
+</html>
