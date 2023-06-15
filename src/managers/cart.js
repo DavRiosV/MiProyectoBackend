@@ -23,9 +23,9 @@ class CartManager {
             return null
         }
     } 
-    async add_cart({ title, description, price, thumbnail, stock}) {
+    async add_cart({ pid, quantity}) {
         try {
-            let data = { title, description, price, thumbnail, stock }
+            let data = { pid, quantity }
             if (this.carts.length>0) {
                 let next_id = this.carts[this.carts.length-1].id+1
                 data.id = next_id
@@ -45,11 +45,11 @@ class CartManager {
     getCarts() {
         return this.carts
     }
-    getCartById(id) {
-        let one = this.carts.find(each=>each.id===id)
+    getCartById(cid) {
+        let one = this.carts.find(each=>each.id===cid)
         if (!one){
             console.log('Not found')
-            return  
+            return 
         } else {
             console.log('Finded cart:' + id)
             return one
