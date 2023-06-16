@@ -1,6 +1,5 @@
-import "dotenv/config.js"
-import { connect } from 'mongoose'
 import express from 'express'
+import 'dotenv/config.js'
 import router from './routes/index.js'
 import errorHandler from './middlewares/errorHandler.js'
 import notFoundHander from './middlewares/notFoundHandler.js'
@@ -21,6 +20,8 @@ server.set('views',__dirname+'/views');
 server.use('/public',express.static('public'));
 server.use(express.json());
 server.use(express.urlencoded({extended:true}));
+
+//endpoints
 server.use('/', router);
 server.use(errorHandler);
 server.use(notFoundHander);
@@ -30,10 +31,5 @@ server.use(logger('dev'));
 
 Handlebars.registerHelper('multiplication', (a, b) => {return a * b})
 Handlebars.registerHelper('sum', (a, b) => {return a + b})
-
-// database
-connect('mongodb+srv://davriosv:Nym3r14.1108@daviddb.iqw1cpp.mongodb.net/commerce')// requiere minimo un parametro, el link de conexion 
-    .then(() =>console.log('database connected'))
-    .catch(err=>console.log(err))
 
 export default server

@@ -1,8 +1,9 @@
 import { Router } from "express";
 import producto from "../../managers/products.js";
+import Product from "../../models/products.models.js";
 
 const router = Router()
-
+//FS
 router.post('/', async (req,res)=> {
     try{
         let title = req.body.title ?? null

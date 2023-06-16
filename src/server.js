@@ -1,29 +1,35 @@
 import server from "./app.js"
 import { Server } from "socket.io"
+import { connect } from "mongoose"
 
-const PORT = process.env.PORT || 8080;
-let ready = () => {
-	console.log(`Server ready on port ${PORT}`);
-};
+const port = process.env.PORT || 8080
+const ready = () => {
+    console.log('Server ready on port ' + port)
+    connect(process.env.LINK_MONGO)
+        .then(() => console.log('connected to database'))
+        .catch(err=>console.log(err))
+}
 
-const chats = [];
+server.listen(port,ready)
 
-const http_server = server.listen(PORT, ready);
-const socket_server = new Server(http_server);
+// const chats = [];
 
-socket_server.on("connection", (socket) => {
+// const http_server = server.listen(port,ready);
+// const socket_server = new Server(http_server);
 
-	socket.on("auth", () => {
-		socket_server.emit("all_messages", chats);
-	});
+// socket_server.on("connection", (socket) => {
 
-	socket.on("new_message", (data) => {
-		chats.push(data);
-        console.log(chats)
-		socket_server.emit("all_messages", chats);
-	});
-	console.log(socket.client.id);
-});
+// 	socket.on("auth", () => {
+// 		socket_server.emit("all_messages", chats);
+// 	});
+
+// 	socket.on("new_message", (data) => {
+// 		chats.push(data);
+//         console.log(chats)
+// 		socket_server.emit("all_messages", chats);
+// 	});
+// 	console.log(socket.client.id);
+// });
 
 // let index_route = '/'
 // let index_function = (req,res) => {
