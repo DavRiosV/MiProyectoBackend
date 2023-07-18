@@ -1,0 +1,91 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#add-products{
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/waves.jpg?alt=media&token=0ec81513-458b-4709-993a-ba94c0ecca3c');
+    background-size: cover;
+}
+
+nav, main, footer {
+    width: 100%;
+}
+.nav-link.active{
+    background-color: #be2f3e;
+    z-index: 2;
+    box-shadow: 0 4px 15px 4px rgba(0,0,0,.16);
+}
+main {
+    flex-grow: 1;
+    background-color: #ffff;
+}
+.card{
+    background-color: #f7f6f7;
+    border: none;
+}
+.card:hover{
+    box-shadow: 0 4px 15px 4px rgba(0,0,0,.16);
+}
+img{
+    object-fit: contain;
+}
+.card-body h5{
+    font-weight: bolder;
+}
+.hero {
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/Pokemon_Evergreen_1440x332_Hero_D_1.png?alt=media&token=29d81746-ca39-416d-b547-527493a2b2c8');
+    background-size: cover;
+    background-position: center;
+    min-width: 1000px;
+}
+.p-5{
+    color: white;
+}
+.chat {
+    background-color: rgb(88, 87, 87);
+    padding: 1rem 1rem .25rem;
+    border-radius: 7px;
+    width: 100%;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    gap: .125rem;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+#messages {
+    background-color: rgba(173, 22, 22, 0.493);
+    padding: .5rem;
+    border-radius: 5px;
+}
+.add-product-form {
+    background-color: rgb(54, 53, 53);
+    color: #f7f6f7;
+    width: max-content;
+}   
+.imgLogo{
+    width: 40px;
+}
+.homeLink{
+    text-decoration: none;
+}
+#card-cart{
+    width: 200px;
+}
+#row-cart{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: grid;
+    justify-content: center;
+}
+#cart-div{
+    width: 200px;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}

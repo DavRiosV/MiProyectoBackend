@@ -4,7 +4,7 @@
     "description": "Peluche de 30 cm de alto",
     "price": 15000,
     "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/pikachu.jpg?alt=media&token=c0be09a8-e126-4943-9b6f-f68c52fd5d8c",
-    "stock": 100,
+    "stock": 97,
     "id": 1
   },
   {
@@ -20,7 +20,7 @@
     "description": "Peluche de 30 cm de alto",
     "price": 20000,
     "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/couple.jpg?alt=media&token=1297e212-66c3-4e15-9000-6a6b3e87072f",
-    "stock": 100,
+    "stock": 95,
     "id": 3
   },
   {
@@ -60,16 +60,24 @@
     "description": "Peluche de 50 cm de alto",
     "price": 35000,
     "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/ivysaur.jpg?alt=media&token=07f55965-deb8-42f9-9699-f7a52eca3b68",
-    "stock": 100,
+    "stock": 95,
     "id": 8
   },
   {
     "title": "Peluche mega Venasaur XL",
     "description": "Peluche de 30 cm de alto",
     "price": 15000,
-    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/charmeleon.jpg?alt=media&token=ee73dc95-dfa9-4152-926d-559461a32174",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/venasaur.jpeg?alt=media&token=90b78914-2919-4e3a-aee0-5f3fa828fe17",
     "stock": 100,
     "id": 9
+  },
+  {
+    "title": "Peluche Squirtle",
+    "description": "Peluche de 30 cm de alto",
+    "price": 20000,
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/squirtle.jpeg?alt=media&token=aacbc186-038a-45cb-839e-6aee83f781dc",
+    "stock": 100,
+    "id": 16
   },
   {
     "title": "Peluche Wartortle",
@@ -86,5 +94,37 @@
     "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/blastoise.jpg?alt=media&token=6feead39-6c8d-4d3e-94fd-5291fb5bc0a1",
     "stock": 100,
     "id": 12
+  },
+  {
+    "title": "Weird Pikachu",
+    "description": "A kind of pikachu from an unknown region.",
+    "price": 15000,
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/pepechu.jpg?alt=media&token=6754ffc0-2aa0-436c-8f01-e348ce252f55",
+    "stock": 96,
+    "id": 13
+  },
+  {
+    "title": "Ditto Bulbasaur",
+    "description": "Ditto plush",
+    "price": 15000,
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/ditto-bulbasaur.jpeg?alt=media&token=ecb7178f-0655-4367-b6ad-9559a6b5c41b",
+    "stock": 99,
+    "id": 14
+  },
+  {
+    "title": "Ditto Charmander",
+    "description": "Ditto Charmander",
+    "price": 15000,
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/ditto-charmander.jpeg?alt=media&token=b5c411f7-c057-46d9-8850-8cfb45c440e1",
+    "stock": 95,
+    "id": 15
+  },
+  {
+    "title": "Ditto Squirtle",
+    "description": "Ditto squirtle",
+    "price": 15000,
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/proyecto-react-da05a.appspot.com/o/ditto-squirtle.jpg?alt=media&token=f1e98435-f713-4f06-83dd-166466bb2819",
+    "stock": 100,
+    "id": 16
   }
 ]

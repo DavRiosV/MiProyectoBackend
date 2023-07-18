@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<nav class="navbar fixed-top navbar-expand-md bg-danger navbar-dark px-5">
+    <div class="container-fluid">
+        <a class="navbar-brand col" href="#">R&A Shop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="col-auto">
+        <div class="navbar-nav flex-column flex-md-row justify-content-around">
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link active" aria-current="page" href="/products">Products</a>
+            <a class="nav-link" href="/products/new_product">New Product</a>
+            <a class="nav-link" href="/chat/">Chat!</a>
+            <a class="nav-link position-relative" href="/cart">Cart<span
+        class="position-absolute top-1 start-100 translate-middle badge rounded-pill bg-warning">{{products_quantity}}</span></a>
+        </div>
+    </div>
+    </div>
+    </div>
+</nav>   
+<section>
+	<h1>Welcome</h1>
+	</section>
+	<section>
+		<ul class="list">
+			<li><a href="/api/products">All Products</a></li>
+			<li><a href="/api/carts">All Carts</a></li>
+		</ul>
+	</section>
+	<section class="create-product">
+		<h3>Create Product</h3>
+		<form action="/api/products" method="post">
+			<label for="title">
+				Product name
+				<input type="text" name="title" required />
+			</label>
+			<label for="description">
+				Desciption
+				<textarea name="description" cols="30" rows="5" maxlength="150" required></textarea>
+			</label>
+			<label for="price">
+				Price
+				<input type="number" name="price" required />
+			</label>
+			<label for="submit">
+				<input type="submit" value="Create Product!" class="btn submit" required />
+			</label>
+		</form>
+</section>
+</body>
+</html>

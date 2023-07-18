@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../public/styles.css">
+	<title>Document</title>
+</head>
+<body id="add-products">
+	<nav class="navbar fixed-top navbar-expand-md bg-danger navbar-dark px-5">
+    <div class="container-fluid">
+        <a class="navbar-brand col" href="/">R&A Shop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="col-auto">
+        <div class="navbar-nav flex-column flex-md-row justify-content-around">
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link active" aria-current="page" href="/products">Products</a>
+            <a class="nav-link" href="/products/new_product">New Product</a>
+            <a class="nav-link" href="/chat/">Chat!</a>
+            <a class="nav-link position-relative" href="/cart/1">Cart<span
+        class="position-absolute top-1 start-100 translate-middle badge rounded-pill bg-warning">{{products_quantity}}</span></a>
+        </div>
+    </div>
+    </div>
+    </div>
+</nav>   
+<section class="pt-5">
+	<div class="container mt-2 pt-2 d-flex justify-content-center align-items-center">
+		<div class="pb-5 w-75">
+			<div class="card">
+				<img src={{product.thumbnail}} class="card-img-top" alt={{product.title}} />
+				<div class="card-body">
+					<h5 class="card-title">{{product.title}}</h5>
+					<p class="card-text">{{product.description}}</p>
+					<p class="card-title price-tag" data-price={{product.price}} data-id="{{product.id}}" id="price-value">Price: {{product.price}}</p>
+					<p class="card-title">Quantity: <input type="number" class="form-control d-inline-block w-25 input-tag input-value-{{product.cid}} {{product.cid}} {{product.id}}" maxlength="4" value="0" min="0" max={{product.stock}} aria-label="item quantity" aria-describedby="addon-wrapping" id="edit-cart-{{product.id}}" data-id="{{product.id}}"/></p>
+					<h5 class="card-title card-tag card-multiplication-{{product.id}}" id="card-multiplication-{{product.id}}">Total: ${{multiplication product.price 1}}</h5>
+					<div class="d-flex justify-content-between pt-3">
+						<a href="/products" class="btn btn-secondary">Go back</a>
+						<button type="button" class="btn btn-warning edit-quantity text-white" id="add-to-cart-{{product.id}}">Add cart</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>	
+</body>
+</html>

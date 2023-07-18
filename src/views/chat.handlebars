@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./public/pokeball-48.png">
+    <link rel="stylesheet" href="../../public/styles.css">
+    <title>Chat</title>
+</head>
+<body>
+<nav class="navbar fixed-top navbar-expand-md bg-danger navbar-dark px-5">
+  <div class="container-fluid">
+    <a class="navbar-brand col" href="/">R&A Shop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="col-auto">
+      <div class="navbar-nav flex-column flex-md-row justify-content-around">
+      <a class="nav-link"  href="/">Home</a>
+      <a class="nav-link" href="/products">Products</a>
+      <a class="nav-link" href="/products/new_product/">New Product</a>
+      <a class="nav-link active" aria-current="page" href="/chat/">Chat</a>
+      <a class="nav-link position-relative" href="/carts/cart/1">Cart<span
+        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning
+		">{{products_quantity}} </span></a>
+      </div>
+    </div>
+    </div>
+  </div>
+</nav>
+<main>
+  <div class="container h-100 ">
+<section class="mt-3 pt-5 pb-5 h-100">
+  <div class="col-12 d-flex flex-column align-items-center h-100">
+    <h3>Chat with us!</h3>
+    <h6>Leave us a message!</h6>
+  <div id="messages" class="chat h-100">
+  </div>
+    <div class="d-flex gap-2 w-100">
+    <i id="username" class="btn btn-secondary"></i>
+    <input type="text" placeholder="Message..." class="p-1 ps-2 pe-2 flex-grow-1" id="message-input" />
+    </div>
+  </div>
+</section>
+</div>   
+</main>   
+</body>
+</html>
