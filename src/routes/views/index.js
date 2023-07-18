@@ -1,6 +1,5 @@
-/////////////////////////////
+
 // IMPORTS & VARIABLES
-/////////////////////////////
 import { Router } from "express";
 import products from './products.js'
 import carts from './cart.js'
@@ -9,9 +8,7 @@ import home from './home.js'
 
 const router = Router()
 
-/////////////////////////////
 // ROUTES
-/////////////////////////////
 router.use('/products', products)
 router.use('/cart', carts)
 router.use('/chat', chat)

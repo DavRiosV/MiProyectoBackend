@@ -7,7 +7,7 @@ import notFoundHander from './middlewares/notFoundHandler.js'
 import { engine } from 'express-handlebars'
 import { __dirname } from './utils.js'
 import Handlebars from 'handlebars'
-import navbarData from './middlewares/navbarData.js'
+import navbar_data from "./middlewares/navbar_data.js"
 import logger from 'morgan'
 
 const server = express()
@@ -21,11 +21,11 @@ server.set('views',__dirname+'/views');
 server.use('/public',express.static('public'));
 server.use(express.json());
 server.use(express.urlencoded({extended:true}));
+server.use(logger('dev'));
+server.use('/', navbar_data);
 server.use('/', router);
 server.use(errorHandler);
 server.use(notFoundHander);
-server.use('/',navbarData);
-server.use(logger('dev'));
 
 
 Handlebars.registerHelper('multiplication', (a, b) => {return a * b})

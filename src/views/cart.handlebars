@@ -4,18 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+	<link rel="stylesheet" href="../../public/styles.css">
     <title>Document</title>
 </head>
 <body>
-    <section class="pt-5">
-	<div class="container mt-2 pt-2">
-		<div class="row-cart">
+<nav class="navbar fixed-top navbar-expand-md bg-danger navbar-dark px-5">
+    <div class="container-fluid">
+        <a class="navbar-brand col" href="/">R&A Shop</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="col-auto">
+                <div class="navbar-nav flex-column flex-md-row justify-content-around">
+                    <a class="nav-link " aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="/products">Products</a>
+                    <a class="nav-link" href="/products/new_product">New Product</a>
+                    <a class="nav-link " href="/chat/">Chat!</a>
+                    <a class="nav-link position-relative active" href="/cart/1">Cart<span
+                    class="position-absolute top-1 start-100 translate-middle badge rounded-pill bg-warning"> {{products_quantity}}</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>  	
+<section class="pt-5">
+	<div class="container mt-2 pt-2" id="card-cart">
+		<div class="row" id="row-cart">
 			{{#each products_data}}
-				<div class="cart-div col-md-4 col-sm-6 mb-3 mb-sm-3">
-					<div class="card-cart">
+				<div class="col-md-4 col-sm-6 mb-3 mb-sm-3" id="cart-div">
+					<div class="card" id="card-cart">
 						<img src={{this.thumbnail}} class="card-img-top" alt={{this.title}} />
-						<div class="card-body">
+						<div class="card-body" >
 							<h5 class="card-title limited-title">{{this.title}}</h5>
 							<p class="card-text limited-paragraph">{{this.description}}</p>
 							<p
@@ -51,15 +72,19 @@
 									data-pid="{{this.pid}}"
 									data-cid="{{this.cid}}"
 								>Delete</button>
+
 								<button
 									type="button"
-									class="btn btn-warning edit-quantity text-white {{this.pid}} {{this.cid}}"
-								>Add cart</button>
+									class="btn btn-warning edit-quantity {{this.pid}} {{this.cid}} text-white"
+								>add cart</button>
+
 							</div>
 						</div>
 					</div>
 				</div>
+
 			{{/each}}
+
 		</div>
 	</div>
 </section>

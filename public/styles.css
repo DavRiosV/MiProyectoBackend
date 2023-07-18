@@ -76,14 +76,15 @@ img{
 .homeLink{
     text-decoration: none;
 }
-.card-cart{
+#card-cart{
     width: 200px;
 }
-.row-cart{
-    display: flex;
-    flex-wrap: wrap;
+#row-cart{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: grid;
+    justify-content: center;
 }
-.cart-div{
+#cart-div{
     width: 200px;
     margin-left: 2rem;
     margin-top: 2rem;

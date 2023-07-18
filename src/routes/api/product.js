@@ -1,37 +1,42 @@
 import { Router } from "express";
-import producto from "../../managers/products.js";
+import producto from "../../managers/Products.js";
+import pValidator from "../../middlewares/pvalidator.js";
 
 const router = Router()
 
-router.post('/', async (req,res)=> {
-    try{
-        let title = req.body.title ?? null
-        let description = req.body.description ?? null
-        let price = req.body.price ?? null
-        let thumbnail = req.body.thumbnail ?? null
-        let stock = req.body.stock ?? []
-        if (title&&description&&price&&thumbnail){
-            let product = await producto.add_product({title, description, price, thumbnail, stock})
-            return res.json({
-                status: 201,
-                product_id: product.id,
-                message: 'created'
-            })
-        } else {
-            return res.json({
-                status: 400,
-                message: 'check all params'
-            })
-        }
-    } catch (error){
-        console.log(error)
-        return res.json({
-            status: 500,
-            message: 'error'
-        })
-    } 
-}
-)
+router.post("/", pValidator, async (req, res, next) => {
+	try {
+		let { title, description, price, thumbnail, stock } = req.body;
+
+		title = title ?? null;
+		description = description ?? null;
+		price = price ?? null;
+		thumbnail = thumbnail ?? null;
+
+		const validProps = ["title", "description", "price", "thumbnail", "stock"];
+		for (const prop in req.body) {
+			if (!validProps.includes(prop)) {
+				throw `wrong data sent '${prop}`;
+			}
+		}
+
+		const product = await product_manager.addProduct({
+			title,
+			description,
+			price,
+			thumbnail,
+			stock,
+		});
+
+		res.json({
+			status: 201,
+			success: true,
+			product,
+		});
+	} catch (error) {
+		next(error);
+	}
+});
 router.get('/', async(req,res,next)=> {
     try {
         let products = producto.getProducts()

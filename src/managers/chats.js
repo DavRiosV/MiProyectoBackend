@@ -23,34 +23,6 @@ class ChatManager {
             return null
         }
     } 
-    // Ejemplo de mensajes de chat
-//     const mensajes = [
-//         {
-//             remitente: 'usuario1',
-//             destinatario: 'usuario2',
-//             contenido: 'Hola, ¿cómo estás?',
-//             timestamp: '2023-05-31 10:00:00'
-//         },
-//         {
-//             remitente: 'usuario2',
-//             destinatario: 'usuario1',
-//             contenido: '¡Hola! Estoy bien, gracias. ¿Y tú?',
-//             timestamp: '2023-05-31 10:01:00'
-//         }
-//     ];
-    
-//     // Guardar mensajes de chat en un archivo JSON
-//     const nombreArchivo = 'chat.json';
-//     const datos = JSON.stringify(mensajes, null, 2);
-    
-//     fs.writeFile(nombreArchivo, datos, 'utf8', (err) => {
-//         if (err) {
-//             console.error('Error al guardar los mensajes de chat:', err);
-//         } else {
-//             console.log('Los mensajes de chat se han guardado en el archivo:', nombreArchivo);
-//     }
-// });
-
 }
 let Chats = new ChatManager('./src/data/chats.json')
 

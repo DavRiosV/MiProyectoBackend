@@ -1,6 +1,6 @@
 import { Router } from "express";
-import manager from "../../managers/Cart.js";
-import producto from "../../managers/products.js";
+import manager from "../../managers/cart.js";
+import producto from "../../managers/Products.js";
 const router = Router()
 
 router.post("/", async (req, res, next) => {
@@ -17,15 +17,20 @@ router.post("/", async (req, res, next) => {
 });
 router.get("/", async (req, res, next) => {
 	try {
-		let carts = await manager.getCarts();
-		res.json({
-			status: 200,
-			success: true,
-			message: `There are ${carts.length} carts`,
-			carts,
-		});
+	let carts = await manager.getCarts();
+	let totalQuantity = carts.reduce((total, cart) => {
+		return total + cart.products.reduce((sum, product) => {
+		return sum + product.quantity;
+		}, 0);
+	}, 0);
+    res.json({
+		status: 200,
+		success: true,
+		message: `There are ${totalQuantity} products in the cart`,
+		carts,
+	});
 	} catch (error) {
-		next(error);
+	next(error);
 	}
 });
 router.get('/:cid', async(req,res,next)=> {
@@ -65,7 +70,7 @@ router.put("/:cid/product/:pid/:units", async (req, res, next) => {
 				quantity: product_quantity,
 			};
 
-			cart = await manager.updateCart({ cid, product_data });
+			cart = await manager.update_cart({ cid, product_data });
 			console.log("cart ", cart);
 
 			console.log("BEFORE  ", product);
@@ -141,7 +146,7 @@ router.delete("/:cid/product/:pid/:units", async (req, res, next) => {
 				pid: product_id,
 				quantity: product_quantity,
 			};
-			cart = await manager.destroy_cart({ cid, product_data });
+			cart = await manager.deleteProductCart({ cid, product_data });
 
 			product = await producto.updateProduct(product_id, {
 				stock: Number(product.stock) + Number(product_quantity),
